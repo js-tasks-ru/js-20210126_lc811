@@ -6,11 +6,20 @@
  */
 export function sortStrings(arr, param = 'asc') {
   let result = arr.slice();
-  result.map(item=>item.normalize());
-  result.sort((a, b) => a.localeCompare(b, 'ru-u-kf-upper', 'en-u-kf-upper'));
-  if (param == 'asc') {
-    return result;
-  } else {
-    return result.reverse();
+  let order;
+  result = result.map(item => item.normalize());
+  switch (param) {
+    case 'asc':
+      order = 1;
+      break;
+    case 'desc':
+      order = -1;
+      break;
+    default:
+      console.error('Invalid param, should be "asc" or "desc"');
+      return -1; // По-хорошему, надо бросить исключение
   }
+  result.sort((a, b) =>
+  order * a.localeCompare(b, 'ru-u-kf-upper', 'en-u-kf-upper'));
+  return result;
 }
