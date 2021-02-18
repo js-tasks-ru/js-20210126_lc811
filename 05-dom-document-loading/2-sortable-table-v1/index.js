@@ -103,11 +103,7 @@ export default class SortableTable {
 
     this.subElements.body.innerHTML = this.getBodyRows(arr);
   }
-
-  removeArrows() {
-    
-  }
-
+  
   remove() {
     this.element.remove();
   }
