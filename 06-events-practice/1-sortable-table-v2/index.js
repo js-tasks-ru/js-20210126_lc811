@@ -107,8 +107,6 @@ export default class SortableTable {
     });
 
     this.subElements.body.innerHTML = this.getBodyRows(arr);
-    const { children } = this.subElements.header;
-    const [_, title] = children;
   }
 
   initEventListners() {

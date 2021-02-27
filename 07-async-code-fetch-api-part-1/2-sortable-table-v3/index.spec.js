@@ -81,7 +81,7 @@ describe('async-code-fetch-api-part-1/sortable-table-v3', () => {
   it('should render loaded data correctly', async() => {
     fetchMock.mockResponseOnce(JSON.stringify(data));
 
-    await sortableTable.render();
+    await sortableTable.update();
 
     const { body } = sortableTable.subElements;
 
@@ -97,7 +97,7 @@ describe('async-code-fetch-api-part-1/sortable-table-v3', () => {
   it('should sort data correctly', async() => {
     fetchMock.mockResponseOnce(JSON.stringify(data));
 
-    await sortableTable.render();
+    await sortableTable.update();
 
     const [_, column2] = sortableTable.subElements.header.children;
     const spy = jest.spyOn(sortableTable, 'sortOnServer');
