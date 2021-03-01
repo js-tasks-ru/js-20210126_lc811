@@ -8,9 +8,8 @@ describe('forms-fetch-api-part-2/product-form-v1', () => {
 
   beforeEach(async () => {
     fetchMock
-      .once(JSON.stringify(productData))
-      .once(JSON.stringify(categoriesData));
-
+      .once(JSON.stringify(categoriesData))
+      .once(JSON.stringify(productData));
 
     const productId = 'some-id';
 
