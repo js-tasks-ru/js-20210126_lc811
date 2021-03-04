@@ -12,9 +12,9 @@
 <body>
 
 <main class="main">
-  <div class="progress-bar">
+  <!-- <div class="progress-bar">
     <div class="progress-bar__line"></div>
-  </div>
+  </div> -->
   <aside class="sidebar">
     <h2 class="sidebar__title">
       <a href="/">shop admin</a>
@@ -59,9 +59,9 @@
 
   const contentNode = document.querySelector('#content');
 
-  async function initialize () {
+  function initialize () {
     const page = new Page();
-    const element = await page.render();
+    const element = page.render();
 
     contentNode.innerHTML = '';
     contentNode.append(element);
